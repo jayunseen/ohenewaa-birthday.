@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday Bestie!</title>
+
+  <style>
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      font-family: Georgia, serif;
+
+      text-align: center;
+
+      color: #5b244b;
+
+      background: linear-gradient(135deg, #ffe0f0, #e3eaff);
+
+      padding: 35px 15px;
+
+      box-sizing: border-box;
+
+    }
+
+    .card {
+
+      max-width: 600px;
+
+      margin: 30px auto;
+
+      padding: 30px 20px;
+
+      background: rgba(255, 255, 255, 0.8);
+
+      border-radius: 25px;
+
+      box-shadow: 0 10px 35px #d58bb544;
+
+    }
+
+    h1 {
+
+      color: #ed3987;
+
+      font-size: clamp(2rem, 8vw, 3.5rem);
+
+    }
+
+    .cake {
+
+      font-size: 100px;
+
+      margin: 15px;
+
+    }
+
+    p {
+
+      font-size: 18px;
+
+      line-height: 1.7;
+
+    }
+
+    button {
+
+      background: #ed3987;
+
+      color: white;
+
+      border: none;
+
+      padding: 15px 22px;
+
+      margin: 10px;
+
+      border-radius: 30px;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+    button:hover {
+
+      background: #bd2468;
+
+    }
+
+    #surprise {
+
+      display: none;
+
+      margin-top: 25px;
+
+      padding: 20px;
+
+      border-radius: 18px;
+
+      background: #fff0f7;
+
+    }
+
+    .heart {
+
+      position: fixed;
+
+      top: -30px;
+
+      animation: fall 4s linear forwards;
+
+      pointer-events: none;
+
+    }
+
+    @keyframes fall {
+
+      to {
+
+        transform: translateY(110vh) rotate(360deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>Happy Birthday, Bestie! 🎉💗</h1>
+
+    <p>Today is all about YOU! 🥹💕</p>
+
+    <div class="cake">🎂</div>
+
+    <p>
+
+      To my favourite person,<br>
+
+      thank you for being such a beautiful part
+
+      of my life. You deserve all the love,
+
+      happiness and beautiful things this world
+
+      has to offer.
+
+    </p>
+
+    <p>
+
+      May this new chapter bring you joy,
+
+      answered prayers, success and countless
+
+      reasons to smile. I love you, bestie! 💖
+
+    </p>
+
+    <button onclick="showSurprise()">
+
+      Open Your Surprise 🎁
+
+    </button>
+
+    <button onclick="celebrate()">
+
+      Let's Celebrate! 🎊
+
+    </button>
+
+    <div id="surprise">
+
+      <h2>A Little Message for You 💌</h2>
+
+      <p>
+
+        No matter where life takes us, I will
+
+        always be grateful that our paths crossed.
+
+        You are appreciated more than words can say.
+
+        Happy birthday, Ohenewaa! 🥹❤️
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showSurprise() {
+
+      document.getElementById("surprise").style.display = "block";
+
+      document.getElementById("surprise").scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+      });
+
+      celebrate();
+
+    }
+
+    function celebrate() {
+
+      const emojis = ["💗", "💕", "🎉", "✨", "💖", "🎈"];
+
+      for (let i = 0; i < 45; i++) {
+
+        const item = document.createElement("span");
+
+        item.className = "heart";
+
+        item.textContent =
+
+          emojis[Math.floor(Math.random() * emojis.length)];
+
+        item.style.left = Math.random() * 100 + "vw";
+
+        item.style.animationDelay = Math.random() * 2 + "s";
+
+        item.style.fontSize = (16 + Math.random() * 20) + "px";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => item.remove(), 6000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
